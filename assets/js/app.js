@@ -26,11 +26,16 @@ import "vidstack/player";
 import "vidstack/player/layouts/default";
 import "vidstack/player/ui";
 
+import { Player } from "./player";
+
 let csrfToken = document
   .querySelector("meta[name='csrf-token']")
   .getAttribute("content");
 let liveSocket = new LiveSocket("/live", Socket, {
   longPollFallbackMs: 2500,
+  hooks: {
+    Player: Player,
+  },
   params: { _csrf_token: csrfToken },
 });
 

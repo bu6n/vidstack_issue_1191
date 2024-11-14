@@ -11,15 +11,14 @@ defmodule VidstackIssue1191Web.Sticky do
       <video src="https://files.vidstack.io/sprite-fight/720p.mp4" controls />
 
       <h2 class="mt-12">non-working &lt;vidstack&gt; element</h2>
-      <media-player
-        title="Sprite Fight"
-        src="https://files.vidstack.io/sprite-fight/720p.mp4"
-        keep-alive
-      >
-        <media-provider></media-provider>
-        <media-video-layout thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt">
-        </media-video-layout>
-      </media-player>
+      <div>
+        <video
+          id="sprite-fight"
+          data-p-src="https://files.vidstack.io/sprite-fight/720p.mp4"
+          data-p-poster="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
+          phx-hook="Player"
+        />
+      </div>
     </div>
     """
   end
