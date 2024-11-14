@@ -9,7 +9,8 @@ defmodule VidstackIssue1191.Application do
   def start(_type, _args) do
     children = [
       VidstackIssue1191Web.Telemetry,
-      {DNSCluster, query: Application.get_env(:vidstack_issue_1191, :dns_cluster_query) || :ignore},
+      {DNSCluster,
+       query: Application.get_env(:vidstack_issue_1191, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: VidstackIssue1191.PubSub},
       # Start the Finch HTTP client for sending emails
       {Finch, name: VidstackIssue1191.Finch},
