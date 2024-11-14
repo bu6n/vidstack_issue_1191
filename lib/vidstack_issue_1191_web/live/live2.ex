@@ -4,7 +4,12 @@ defmodule VidstackIssue1191Web.Live2 do
   @impl true
   def render(assigns) do
     ~H"""
-    <h1>Page 2</h1>
+    <h1 class="text-xl font-bold">Page 2</h1>
     """
+  end
+
+  @impl true
+  def handle_params(_params, _url, socket) do
+    {:noreply, socket}
   end
 end
